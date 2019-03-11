@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.lsproject">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".app.MyApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.ycpx.wdpx.LessonListActivity"></activity>
+        <activity android:name=".activity.ycpx.wdpx.WdpxDetailActivity" />
+        <activity android:name=".activity.ycpx.wdpx.WdpxActivity" />
+        <activity android:name=".activity.ycpx.pxjh.PxjhDetailActivity" />
+        <activity android:name=".activity.ycpx.pxjh.PxjhActivity" />
+        <activity android:name=".activity.ycpx.YcpxActivity" />
+        <activity android:name=".activity.xskq.XskqDetailActivity" />
+        <activity android:name=".activity.xskq.XskqActivity" />
+        <activity
+            android:name=".activity.main.WelcomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/StartTheme"
+            android:windowSoftInputMode="stateHidden|adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.main.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".activity.main.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+    </application>
+
+</manifest>

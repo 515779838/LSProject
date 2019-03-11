@@ -1,0 +1,10 @@
+<resources>
+
+    <dimen name="radius">6dp</dimen>
+
+    <dimen name="text_select">14sp</dimen>
+    <dimen name="heigh_select">44dp</dimen>
+
+
+
+</resources>
