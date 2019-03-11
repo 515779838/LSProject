@@ -1,18 +1,13 @@
 package com.example.lsproject.activity.ycpx.wdpx
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-
 import com.example.lsproject.R
-import com.example.lsproject.activity.ycpx.pxjh.PxjhDetailActivity
 import com.example.lsproject.adapter.WdpxAdapter
-import com.example.lsproject.bean.PxjhBean
 import com.example.lsproject.bean.WdpxBean
 import com.handmark.pulltorefresh.library.PullToRefreshBase
 import com.hhkj.highschool.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_wdpx.*
-import java.util.ArrayList
+import java.util.*
 
 /**
  * 我的培訓
@@ -36,7 +31,7 @@ class WdpxActivity : BaseActivity() {
     }
 
     private fun setData() {
-        var pxjhBeanList =  ArrayList<WdpxBean>()
+        var pxjhBeanList = ArrayList<WdpxBean>()
 
         val homeBean1 = WdpxBean("1", "2018年第四季度", "2018年")
         val homeBean2 = WdpxBean("2", "2018年第四季度", "2018年")
@@ -50,10 +45,10 @@ class WdpxActivity : BaseActivity() {
 
 
         pullToRefreshListView.mode = PullToRefreshBase.Mode.DISABLED
-        if (mAdapter == null){
-            mAdapter = WdpxAdapter(pxjhBeanList,this@WdpxActivity,title)
+        if (mAdapter == null) {
+            mAdapter = WdpxAdapter(pxjhBeanList, this@WdpxActivity, title)
             pullToRefreshListView.setAdapter(mAdapter)
-        }else{
+        } else {
             mAdapter!!.notifyDataSetChanged()
         }
 

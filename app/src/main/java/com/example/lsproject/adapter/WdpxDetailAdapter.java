@@ -10,6 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.lsproject.R;
+import com.example.lsproject.activity.ycpx.wdpx.LessionEvaActivity;
 import com.example.lsproject.activity.ycpx.wdpx.LessonListActivity;
 import com.example.lsproject.activity.ycpx.wdpx.WdpxDetailActivity;
 import com.example.lsproject.bean.WdpxBean;
@@ -21,11 +22,13 @@ public class WdpxDetailAdapter extends BaseAdapter {
     private List<WdpxBean> beans;
     private Context context;
     private String title;
+    private String flag;
 
-    public WdpxDetailAdapter(List<WdpxBean> beans, Context context, String title) {
+    public WdpxDetailAdapter(List<WdpxBean> beans, Context context, String title, String flag) {
         this.beans = beans;
         this.context = context;
         this.title = title;
+        this.flag = flag;
     }
 
     @Override
@@ -59,29 +62,37 @@ public class WdpxDetailAdapter extends BaseAdapter {
             holder = (Holder) convertView.getTag();
         }
 
+        if ("0".equals(flag)){
+            holder.tv_jrkc.setBackgroundResource(R.drawable.background_btn3);
+            holder.tv_kcpj.setBackgroundResource(R.drawable.background_btn3);
+        }else {
+            holder.tv_jrkc.setBackgroundResource(R.drawable.background_btn2);
+            holder.tv_kcpj.setBackgroundResource(R.drawable.background_btn2);
 
-        //进入课程
-        holder.tv_jrkc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            //进入课程
+            holder.tv_jrkc.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
-                Intent intent = new Intent(context, LessonListActivity.class);
-                intent.putExtra("id",beans.get(position).getId());
-                intent.putExtra("title",title);
-                context.startActivity(intent);
-            }
-        });
-        //课程评价
-        holder.tv_kcpj.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                    Intent intent = new Intent(context, LessonListActivity.class);
+                    intent.putExtra("id",beans.get(position).getId());
+                    intent.putExtra("title",title);
+                    context.startActivity(intent);
+                }
+            });
+            //课程评价
+            holder.tv_kcpj.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
-                Intent intent = new Intent(context, LessonListActivity.class);
-                intent.putExtra("id",beans.get(position).getId());
-                intent.putExtra("title",title);
-                context.startActivity(intent);
-            }
-        });
+                    Intent intent = new Intent(context, LessionEvaActivity.class);
+                    intent.putExtra("id",beans.get(position).getId());
+                    intent.putExtra("title",title);
+                    context.startActivity(intent);
+                }
+            });
+        }
+
         return convertView;
     }
 

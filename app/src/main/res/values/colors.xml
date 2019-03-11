@@ -14,5 +14,11 @@
 
     <color name="bg_main">#2196F3</color>
     <color name="bg2">#F6FAFF</color>
+    <color name="gray">#CCCCCC</color>
+
+    <color name="xxda_title">#00CC99</color>
+    <color name="text1">#949494</color>
+    <color name="red">#FF0000</color>
+
 
 </resources>

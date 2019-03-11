@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import com.example.lsproject.R;
 import com.example.lsproject.activity.ycpx.YcpxActivity;
+import com.example.lsproject.activity.yxxx.YxxxActivity;
+import com.example.lsproject.activity.zxzy.ZxzyActivity;
 import com.example.lsproject.adapter.HomeAdapter;
 import com.example.lsproject.bean.HomeBean;
 import com.example.lsproject.view.SlideShowView;
@@ -60,12 +62,12 @@ public class MainActivity extends BaseActivity {
                         intent.putExtra("title",homeModels.get(position).getResourceName());
                         break;
                     case "2":
-//                        intent = new Intent(MainActivity.this, CadreTeaExchangeActivity.class);
-//                        intent.putExtra("title",homeModels.get(position).getResourceName());
+                        intent = new Intent(MainActivity.this, ZxzyActivity.class);
+                        intent.putExtra("title",homeModels.get(position).getResourceName());
                         break;
                     case "3":
-//                        intent = new Intent(MainActivity.this, HardwareResourcesSharingActivity.class);
-//                        intent.putExtra("title",homeModels.get(position).getResourceName());
+                        intent = new Intent(MainActivity.this, YxxxActivity.class);
+                        intent.putExtra("title",homeModels.get(position).getResourceName());
                         break;
 
                     default:

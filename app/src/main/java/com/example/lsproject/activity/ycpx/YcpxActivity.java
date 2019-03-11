@@ -8,8 +8,12 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import com.example.lsproject.R;
+import com.example.lsproject.activity.ycpx.dcwj.DcwjActivity;
 import com.example.lsproject.activity.ycpx.pxjh.PxjhActivity;
+import com.example.lsproject.activity.ycpx.pxsq.PxsqActivity;
 import com.example.lsproject.activity.ycpx.wdpx.WdpxActivity;
+import com.example.lsproject.activity.ycpx.xxda.XxdaActivity;
+import com.example.lsproject.activity.ycpx.xxpxcx.XxpxcxActivity;
 import com.example.lsproject.adapter.HomeAdapter;
 import com.example.lsproject.bean.HomeBean;
 import com.hhkj.highschool.base.BaseActivity;
@@ -43,31 +47,30 @@ public class YcpxActivity extends BaseActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = null;
                 switch (homeModels.get(position).getResourceId()) {
-                    case "1":
+                    case "1"://培训计划
                         intent = new Intent(YcpxActivity.this, PxjhActivity.class);
                         intent.putExtra("title", homeModels.get(position).getResourceName());
                         break;
-                    case "2":
+                    case "2"://我的培训
                         intent = new Intent(YcpxActivity.this, WdpxActivity.class);
                         intent.putExtra("title",homeModels.get(position).getResourceName());
                         break;
-                    case "3":
-//                        intent = new Intent(MainActivity.this, HardwareResourcesSharingActivity.class);
-//                        intent.putExtra("title",homeModels.get(position).getResourceName());
+                    case "3"://培训申请
+                        intent = new Intent(YcpxActivity.this, PxsqActivity.class);
+                        intent.putExtra("title",homeModels.get(position).getResourceName());
                         break;
-                    case "4":
-//                        intent = new Intent(MainActivity.this, HardwareResourcesSharingActivity.class);
-//                        intent.putExtra("title",homeModels.get(position).getResourceName());
+                    case "4"://调查问卷
+                        intent = new Intent(YcpxActivity.this, DcwjActivity.class);
+                        intent.putExtra("title",homeModels.get(position).getResourceName());
                         break;
-                    case "5":
-//                        intent = new Intent(MainActivity.this, HardwareResourcesSharingActivity.class);
-//                        intent.putExtra("title",homeModels.get(position).getResourceName());
+                    case "5"://学习档案
+                        intent = new Intent(YcpxActivity.this, XxdaActivity.class);
+                        intent.putExtra("title",homeModels.get(position).getResourceName());
                         break;
-                    case "6":
-//                        intent = new Intent(MainActivity.this, HardwareResourcesSharingActivity.class);
-//                        intent.putExtra("title",homeModels.get(position).getResourceName());
-
-
+                    case "6"://线下培训查询
+                        intent = new Intent(YcpxActivity.this, XxpxcxActivity.class);
+                        intent.putExtra("title",homeModels.get(position).getResourceName());
+                        break;
                     default:
                         Toast.makeText(YcpxActivity.this, "功能暂未开放，敬请期待", Toast.LENGTH_SHORT).show();
                         break;

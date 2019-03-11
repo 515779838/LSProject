@@ -9,12 +9,14 @@ import com.example.lsproject.bean.WdpxBean
 import com.handmark.pulltorefresh.library.PullToRefreshBase
 import com.hhkj.highschool.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_wdpx_detail.*
+import kotlinx.android.synthetic.main.header_wdpx_detail.*
 import java.util.ArrayList
 
 class WdpxDetailActivity : BaseActivity() {
 
     private var mAdapter: WdpxDetailAdapter? = null
     private var title = ""
+    private var flag = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +26,10 @@ class WdpxDetailActivity : BaseActivity() {
 
     private fun initView() {
         title = intent.getStringExtra("title")
+
+        if (intent.hasExtra("flag")){
+            flag = intent.getStringExtra("flag")
+        }
         setTextTitle(title)
         setData()
 
@@ -42,11 +48,21 @@ class WdpxDetailActivity : BaseActivity() {
         pxjhBeanList.add(homeBean3)
         pxjhBeanList.add(homeBean4)
 
+
+
         var headView = LayoutInflater.from(this).inflate(R.layout.header_wdpx_detail, null)
         pullToRefreshListView.refreshableView.addHeaderView(headView)
         pullToRefreshListView.mode = PullToRefreshBase.Mode.DISABLED
+
+        if (flag == "0"){
+            tv_zxks.setBackgroundResource(R.drawable.background_btn3)
+        }else{
+            tv_zxks.setBackgroundResource(R.drawable.background_btn2)
+        }
+
+
         if (mAdapter == null){
-            mAdapter = WdpxDetailAdapter(pxjhBeanList,this@WdpxDetailActivity,title)
+            mAdapter = WdpxDetailAdapter(pxjhBeanList,this@WdpxDetailActivity,title,flag)
             pullToRefreshListView.setAdapter(mAdapter)
         }else{
             mAdapter!!.notifyDataSetChanged()
