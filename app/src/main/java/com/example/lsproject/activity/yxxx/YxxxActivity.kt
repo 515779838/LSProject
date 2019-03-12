@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentPagerAdapter
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 
@@ -55,13 +56,13 @@ class YxxxActivity : BaseActivity(), View.OnClickListener {
         mTabLayout!!.addTab(mTabLayout!!.newTab().setText(arr[1]))
         mTabLayout!!.addTab(mTabLayout!!.newTab().setText(arr[2]))
         mTabLayout!!.addTab(mTabLayout!!.newTab().setText(arr[3]))
-        val y1 = YxxxFragment()
+        var y1 = YxxxFragment()
         y1.initData("0", "", "", title)
-        val y2 = YxxxFragment()
+        var y2 = YxxxFragment()
         y1.initData("1", "", "", title)
-        val y3 = YxxxFragment()
+        var y3 = YxxxFragment()
         y1.initData("2", "", "", title)
-        val y4 = YxxxFragment()
+        var y4 = YxxxFragment()
         y1.initData("3", "", "", title)
         list.add(y1)
         list.add(y2)
@@ -70,9 +71,22 @@ class YxxxActivity : BaseActivity(), View.OnClickListener {
         adapter = ViewPagerAdapter(this.supportFragmentManager, this, list, arr)
         viewPager!!.adapter = adapter
         mTabLayout!!.setupWithViewPager(viewPager)
-        viewPager!!.offscreenPageLimit = 2//预加载
+        viewPager!!.offscreenPageLimit =4//预加载
 
 
+//        mTabLayout!!.setOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+//            override fun onTabSelected(tab: TabLayout.Tab) {
+//                Log.e("zj","tab.position = "+tab.position)
+//            }
+//
+//            override fun onTabUnselected(tab: TabLayout.Tab) {
+//
+//            }
+//
+//            override fun onTabReselected(tab: TabLayout.Tab) {
+//
+//            }
+//        })
     }
 
     override fun onClick(view: View) {

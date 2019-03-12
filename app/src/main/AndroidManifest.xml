@@ -17,16 +17,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.main.ChangeEmailActivity"></activity>
-        <activity android:name=".activity.main.ChangePhone2Activity" />
-        <activity android:name=".activity.main.ChangePhoneActivity" />
-        <activity android:name=".activity.main.ChangePwdActivity" />
-        <activity android:name=".activity.main.PersonalActivity" />
-        <activity android:name=".activity.zxxk.ZxxkActivity" />
-        <activity android:name=".activity.kcb.KcbActivity" />
-        <activity android:name=".activity.grjx.GrjxDetailActivity" />
-        <activity android:name=".activity.grjx.GrjxActivity" />
-        <activity android:name=".activity.zxdy.ZxdyActivity" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -175,6 +165,48 @@
             android:name=".activity.main.Main2Activity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".activity.main.ChangeEmailActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".activity.main.ChangePhone2Activity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".activity.main.ChangePhoneActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".activity.main.ChangePwdActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".activity.main.PersonalActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".activity.zxxk.ZxxkActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".activity.kcb.KcbActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".activity.grjx.GrjxDetailActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".activity.grjx.GrjxActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".activity.zxdy.ZxdyActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
     </application>
 
 </manifest>

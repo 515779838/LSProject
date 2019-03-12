@@ -49,7 +49,9 @@ public class YxxxFragment extends BaseFragment {
         net_getData();
     }
 
-    public void initData(String index, String lbId, String flId,String title) {
+    public  void initData(String index, String lbId, String flId,String title) {
+        Log.e("zj","initData");
+        Log.e("zj","index= "+index);
         this.index = index;
         this.lbId = lbId;
         this.flId = flId;
@@ -99,8 +101,6 @@ public class YxxxFragment extends BaseFragment {
 
         pxjhBeanList.add(homeBean1);
 
-
-
         if (adapter == null){
             adapter = new YxxxAdapter(pxjhBeanList,getActivity(),"");
             pullToRefreshListView.setAdapter(adapter);
@@ -112,6 +112,7 @@ public class YxxxFragment extends BaseFragment {
         pullToRefreshListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.e("zj","index = "+index);
                 Intent intent = new Intent(getActivity(), YxxxDetailActivity.class);
                 intent.putExtra("title",title);
                 getActivity().startActivity(intent);
