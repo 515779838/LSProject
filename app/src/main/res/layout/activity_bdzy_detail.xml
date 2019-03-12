@@ -17,6 +17,7 @@
             android:layout_margin="8dp"
             android:gravity="center"
             android:textSize="16sp"
+            android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="资源名称"/>
@@ -34,7 +35,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"
+            android:src="@mipmap/baaner1"
             android:scaleType="fitXY" />
 
 

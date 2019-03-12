@@ -11,6 +11,10 @@ import com.hhkj.highschool.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_lesson_list.*
 import java.util.ArrayList
 
+/**
+ * 进入课程
+ * 课程列表
+ */
 class LessonListActivity : BaseActivity() {
     private var mAdapter: LessionListAdapter? = null
 
@@ -18,12 +22,14 @@ class LessonListActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lesson_list)
+        setLeftBtn(true)
+        title = intent.getStringExtra("title")
+        setTextTitle(title)
         initView()
     }
 
     private fun initView() {
-        title = intent.getStringExtra("title")
-        setTextTitle(title)
+
         setData()
 
     }

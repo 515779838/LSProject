@@ -18,6 +18,9 @@ import com.hhkj.highschool.base.BaseActivity;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 在线资源
+ */
 public class ZxzyActivity extends BaseActivity {
     private List<HomeBean> homeModels;
 

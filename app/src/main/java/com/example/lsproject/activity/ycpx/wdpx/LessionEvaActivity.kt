@@ -1,5 +1,6 @@
 package com.example.lsproject.activity.ycpx.wdpx
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -66,6 +67,24 @@ class LessionEvaActivity : BaseActivity() {
             pullToRefreshListView.setAdapter(mAdapter)
         }else{
             mAdapter!!.notifyDataSetChanged()
+        }
+
+        mAdapter!!.setOnIsDelete { id, position ->
+            var builder = AlertDialog.Builder(this@LessionEvaActivity)
+
+            builder.setTitle("提示")
+            builder.setMessage("确定删除此条评论？")
+
+            builder.setPositiveButton("确定") { dialog, which ->
+                //                SPTools.put(this,Constant.SESSIONID,"1111");
+
+                hideSoftInput()
+                dialog.dismiss()
+            }
+            builder.setNegativeButton("取消") { dialog, which ->
+                dialog.dismiss()
+            }
+            builder.show()
         }
 
         pullToRefreshListView.setOnItemClickListener { adapterView, view, i, l ->

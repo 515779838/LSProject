@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.main.ChangePwdActivity">
+
+    <include layout="@layout/view_actionbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="12dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingLeft="12dp"
+                android:text="旧密码："
+                android:textSize="12sp" />
+
+            <com.example.lsproject.view.ClearEditText
+                android:id="@+id/et_oldPw"
+                style="@style/MyEditText"
+                android:layout_width="match_parent"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/white"
+                android:digits="1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="6-16个字符，区分大小写"
+                android:inputType="textPassword"
+                android:maxLength="16"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="12dp"
+                android:text="新密码："
+                android:textSize="12sp" />
+
+            <com.example.lsproject.view.ClearEditText
+                android:id="@+id/et_newPw1"
+                style="@style/MyEditText"
+                android:layout_width="match_parent"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/white"
+                android:digits="1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="6-16个字符，区分大小写"
+                android:inputType="textPassword"
+                android:maxLength="16"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="12dp"
+                android:text="确认新密码："
+                android:textSize="12sp" />
+
+            <com.example.lsproject.view.ClearEditText
+                android:id="@+id/et_newPw2"
+                style="@style/MyEditText"
+                android:layout_width="match_parent"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/white"
+                android:digits="1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="6-16个字符，区分大小写"
+                android:inputType="textPassword"
+                android:maxLength="16"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp" />
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:background="@null"
+                android:checked="false"
+                android:text="显示密码"
+                android:textSize="14dp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_height="40dp"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/white"
+                android:background="@drawable/background_btn2"
+                android:text="确认" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

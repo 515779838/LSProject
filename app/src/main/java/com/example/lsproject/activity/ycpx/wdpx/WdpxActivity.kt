@@ -20,12 +20,14 @@ class WdpxActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_wdpx)
+        setLeftBtn(true)
+        title = intent.getStringExtra("title")
+        setTextTitle(title)
         initView()
     }
 
     private fun initView() {
-        title = intent.getStringExtra("title")
-        setTextTitle(title)
+
         setData()
 
     }

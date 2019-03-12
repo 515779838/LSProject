@@ -1,6 +1,5 @@
 package com.example.lsproject.activity.yxxx;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.lsproject.R;
@@ -15,5 +14,7 @@ public class KcmlActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kcml);
+        setLeftBtn(true);
+        setTextTitle(getIntent().getStringExtra("title"));
     }
 }

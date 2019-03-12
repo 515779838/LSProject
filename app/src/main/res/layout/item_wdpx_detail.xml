@@ -95,26 +95,26 @@
                 android:id="@+id/tv_jrkc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/shape_corner_state1"
+                android:background="@drawable/background_btn2"
                 android:paddingLeft="16dp"
                 android:paddingTop="8dp"
                 android:paddingRight="16dp"
                 android:paddingBottom="8dp"
                 android:text="进入课程"
-                android:textColor="@color/colorAccent" />
+                android:textColor="@color/white" />
 
             <TextView
                 android:layout_marginTop="4dp"
                 android:id="@+id/tv_kcpj"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/shape_corner_state1"
+                android:background="@drawable/background_btn2"
                 android:paddingLeft="16dp"
                 android:paddingTop="8dp"
                 android:paddingRight="16dp"
                 android:paddingBottom="8dp"
                 android:text="课程评价"
-                android:textColor="@color/colorAccent" />
+                android:textColor="@color/white" />
         </LinearLayout>
 
     </LinearLayout>

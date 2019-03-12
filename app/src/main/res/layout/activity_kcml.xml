@@ -37,6 +37,8 @@
         android:background="@android:color/white"
         android:childDivider="@android:color/white"
         android:divider="@android:color/white"
+        android:scrollbars="none"
+        android:listSelector="@android:color/transparent"
         android:dividerHeight="0dp" />
 
 </LinearLayout>

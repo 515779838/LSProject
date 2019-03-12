@@ -1,4 +1,4 @@
-package com.example.lsproject.activity.yxxx;
+package com.example.lsproject.activity.zxdy;
 
 import android.content.Context;
 import android.support.design.widget.TabLayout;
@@ -11,25 +11,34 @@ import android.os.Bundle;
 
 import com.example.lsproject.R;
 import com.example.lsproject.fragment.YxxxFragment;
+import com.example.lsproject.fragment.ZxdyFragment;
 import com.hhkj.highschool.base.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class YxxxActivity extends BaseActivity {
+/**
+ * 在线调研
+ */
+public class ZxdyActivity extends BaseActivity {
     private List<Fragment> list = new ArrayList<>();
     private ViewPagerAdapter adapter;
     private TabLayout mTabLayout;
     private ViewPager viewPager;
-    private String[] arr = {"全部", "正在进行","即将开始", "已结束"};
+    private String[] arr = {"会议列表", "历史会议"};
+
+    private String title = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_yxxx);
+        setContentView(R.layout.activity_zxdy);
         initView();
     }
 
     private void initView() {
+        setLeftBtn(true);
+        title = getIntent().getStringExtra("title");
+        setTextTitle(title);
 
         mTabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
         mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
@@ -37,20 +46,14 @@ public class YxxxActivity extends BaseActivity {
         mTabLayout.setTabMode(TabLayout.MODE_FIXED);
         mTabLayout.addTab(mTabLayout.newTab().setText(arr[0]));
         mTabLayout.addTab(mTabLayout.newTab().setText(arr[1]));
-        mTabLayout.addTab(mTabLayout.newTab().setText(arr[2]));
-        mTabLayout.addTab(mTabLayout.newTab().setText(arr[3]));
-        final YxxxFragment y1 = new YxxxFragment();
-        y1.initData("0","","");
-        final YxxxFragment y2 = new YxxxFragment();
-        y1.initData("1","","");
-        final YxxxFragment y3 = new YxxxFragment();
-        y1.initData("2","","");
-        final YxxxFragment y4 = new YxxxFragment();
-        y1.initData("3","","");
+        final ZxdyFragment y1 = new ZxdyFragment();
+        y1.initData("0","","",title);
+        final ZxdyFragment y2 = new ZxdyFragment();
+        y1.initData("1","","",title);
+
         list.add(y1);
         list.add(y2);
-        list.add(y3);
-        list.add(y4);
+
         adapter = new ViewPagerAdapter(this.getSupportFragmentManager(), this, list, arr);
         viewPager.setAdapter(adapter);
         mTabLayout.setupWithViewPager(viewPager);

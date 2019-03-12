@@ -20,6 +20,7 @@ import com.cyf.nfcproject.bean.BaseBean;
 import com.example.lsproject.R;
 import com.example.lsproject.activity.ycpx.YcpxActivity;
 import com.example.lsproject.activity.yxxx.YxxxActivity;
+import com.example.lsproject.activity.zxdy.ZxdyActivity;
 import com.example.lsproject.activity.zxzy.ZxzyActivity;
 import com.example.lsproject.adapter.HomeAdapter;
 import com.example.lsproject.bean.HomeBean;
@@ -72,6 +73,8 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Log.e("zj", "setRightButton");
+
+                startActivity(new Intent(MainActivity.this,PersonalActivity.class));
             }
         });
 
@@ -107,6 +110,11 @@ public class MainActivity extends BaseActivity {
                                 "com.education.teach",
                                 "app-debug-1.1.10.1024.apk",
                                 "com.education.teach.mvp.ui.activity.LoginActivity");
+                        break;
+
+                    case "5":
+                        intent = new Intent(MainActivity.this, ZxdyActivity.class);
+                        intent.putExtra("title",homeModels.get(position).getName());
                         break;
 
                     default:
@@ -149,10 +157,12 @@ public class MainActivity extends BaseActivity {
         HomeBean homeBean2 = new HomeBean("2", "在线资源", "" + R.mipmap.ic_launcher);
         HomeBean homeBean3 = new HomeBean("3", "研修学习", "" + R.mipmap.ic_launcher);
         HomeBean homeBean4 = new HomeBean("4", "学生自主学习", "" + R.mipmap.ic_launcher);
+        HomeBean homeBean5 = new HomeBean("5", "在线调研", "" + R.mipmap.ic_launcher);
         homeModels.add(homeBean1);
         homeModels.add(homeBean2);
         homeModels.add(homeBean3);
         homeModels.add(homeBean4);
+        homeModels.add(homeBean5);
         gridView.setAdapter(new HomeAdapter(homeModels, MainActivity.this));
     }
 

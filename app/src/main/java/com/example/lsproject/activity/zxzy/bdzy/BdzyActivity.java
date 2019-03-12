@@ -40,6 +40,8 @@ public class BdzyActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(BdzyActivity.this,SearchActivity.class);
+                intent.putExtra("title",title);
+                startActivity(intent);
             }
         });
         initView();

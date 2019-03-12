@@ -107,6 +107,7 @@
             android:layout_height="44dp"
             android:layout_weight="1"
             android:gravity="center"
+            android:onClick="onClick"
             android:orientation="vertical">
 
             <TextView

@@ -12,7 +12,7 @@ import com.example.lsproject.R;
 import com.example.lsproject.activity.zxzy.bdzy.BdzyDetailActivity;
 import com.example.lsproject.adapter.BdzyAdapter;
 import com.example.lsproject.base.BaseFragment;
-import com.example.lsproject.bean.PxjhBean;
+
 import com.example.lsproject.bean.WdpxBean;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;

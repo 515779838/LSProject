@@ -38,6 +38,7 @@ public class XskqDetailActivity extends BaseActivity {
      * view初始化
      */
     private void initView() {
+
         mListView = findViewById(R.id.pullToRefreshListView);
         mMainCkb = findViewById(R.id.checkBox);
     }

@@ -2,6 +2,8 @@ package com.example.lsproject.activity.yxxx
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.ImageView
 
 import com.example.lsproject.R
 import com.example.lsproject.activity.ycpx.wdpx.LessionEvaActivity
@@ -15,17 +17,26 @@ class YxxxDetailActivity : BaseActivity() {
     private var mPopupWindow: ListViewPopupWindow? = null
     private val mMenuItems =ArrayList<String>()
     private var mMenuAdapter: MenuAdapter? = null
+    private var iv_right: ImageView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_yxxx_detail)
+        setTextTitle("研修学习")
+        setLeftBtn(true)
         initView()
+        iv_right = findViewById(R.id.iv_right)
+
+        setRightButton(true, R.mipmap.ic_btn_more, View.OnClickListener {
+            mPopupWindow!!.show(iv_right, 0, 0, false)
+        })
+
+
         initPopWindow()
     }
 
     private fun initView() {
-        setTextTitle("研修学习")
-        setLeftBtn(true)
+
     }
 
     private fun initPopWindow() {

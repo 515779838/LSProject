@@ -21,16 +21,18 @@ class WdpxDetailActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_wdpx_detail)
-        initView()
-    }
-
-    private fun initView() {
+        setLeftBtn(true)
         title = intent.getStringExtra("title")
 
         if (intent.hasExtra("flag")){
             flag = intent.getStringExtra("flag")
         }
         setTextTitle(title)
+        initView()
+    }
+
+    private fun initView() {
+
         setData()
 
     }

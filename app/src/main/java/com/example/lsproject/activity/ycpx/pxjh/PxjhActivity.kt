@@ -2,6 +2,7 @@ package com.example.lsproject.activity.ycpx.pxjh
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 
 import com.example.lsproject.R
 import com.example.lsproject.adapter.PxjhAdapter
@@ -18,14 +19,17 @@ class PxjhActivity : BaseActivity() {
 
     private var mAdapter: PxjhAdapter? = null
 
+    private var title = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pxjh)
+        setLeftBtn(true)
+        title =intent.getStringExtra("title")
+        setTextTitle(title)
         initView()
     }
 
     private fun initView() {
-        setTextTitle(intent.getStringExtra("title"))
 
         setData()
 
@@ -54,9 +58,10 @@ class PxjhActivity : BaseActivity() {
         }
 
         pullToRefreshListView.setOnItemClickListener { adapterView, view, i, l ->
-
+            Log.e("zj","i = "+i)
             var intent = Intent(this@PxjhActivity,PxjhDetailActivity::class.java)
             intent.putExtra("id",pxjhBeanList[i-1].id)
+            intent.putExtra("title",title)
             startActivity(intent)
         }
     }

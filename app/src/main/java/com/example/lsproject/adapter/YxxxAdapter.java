@@ -50,7 +50,7 @@ public class YxxxAdapter extends BaseAdapter {
                     R.layout.item_yxxx, parent, false);
 //            holder.tv_name = (TextView) convertView.findViewById(R.id.tv_name);
 //            holder.tv_year = (TextView) convertView.findViewById(R.id.tv_year);
-            holder.tv_in = (TextView) convertView.findViewById(R.id.tv_in);
+
             convertView.setTag(holder);
         } else {
             holder = (Holder) convertView.getTag();
@@ -63,16 +63,6 @@ public class YxxxAdapter extends BaseAdapter {
 //
 //        holder.tv_look.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG); //下划线
 //        holder.tv_look.getPaint().setAntiAlias(true);//抗锯齿
-        holder.tv_in.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(context, WdpxDetailActivity.class);
-                intent.putExtra("id",beans.get(position).getId());
-                intent.putExtra("title",title);
-                context.startActivity(intent);
-            }
-        });
 
 
         return convertView;
@@ -81,7 +71,6 @@ public class YxxxAdapter extends BaseAdapter {
     public class Holder {
         public TextView tv_name;
         public TextView tv_year;
-        public TextView tv_in;
     }
 
 }

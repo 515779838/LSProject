@@ -24,6 +24,9 @@ import com.hhkj.highschool.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_dsjfx.*
 import java.util.ArrayList
 
+/**
+ * 大数据分析
+ */
 class DsjfxActivity : BaseActivity() {
 
     private var type1 = ""

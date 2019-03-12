@@ -9,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.lsproject.R;
+import com.example.lsproject.activity.ycpx.wdpx.EditEvaActivity;
 import com.example.lsproject.activity.ycpx.wdpx.LessionEvaActivity;
 import com.example.lsproject.activity.ycpx.wdpx.LessonListActivity;
 import com.example.lsproject.bean.WdpxBean;
@@ -51,26 +52,26 @@ public class LessionEvaAdapter extends BaseAdapter {
                     R.layout.item_lession_eva, parent, false);
 //            holder.tv_name = (TextView) convertView.findViewById(R.id.tv_name);
 //            holder.tv_year = (TextView) convertView.findViewById(R.id.tv_year);
-            holder.tv_edit = (TextView) convertView.findViewById(R.id.tv_edit);
-            holder.tv_delete = (TextView) convertView.findViewById(R.id.tv_delete);
+            holder.tv_edit = convertView.findViewById(R.id.tv_edit);
+            holder.tv_delete = convertView.findViewById(R.id.tv_delete);
             convertView.setTag(holder);
         } else {
             holder = (Holder) convertView.getTag();
         }
 
 
-        //进入课程
+        //编辑
         holder.tv_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(context, LessonListActivity.class);
+                Intent intent = new Intent(context, EditEvaActivity.class);
                 intent.putExtra("id",beans.get(position).getId());
                 intent.putExtra("title",title);
                 context.startActivity(intent);
             }
         });
-        //课程评价
+        //删除
         holder.tv_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
