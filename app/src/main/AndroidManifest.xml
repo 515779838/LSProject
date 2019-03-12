@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" /> <!-- 往sdcard中写入数据的权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".app.MyApp"
@@ -35,6 +37,17 @@
         <activity android:name=".activity.ycpx.wdpx.LessionEvaActivity" />
         <activity android:name=".activity.main.WebActivity" />
         <activity android:name=".activity.ycpx.wdpx.LessonListActivity" />
+        <activity android:name=".activity.dsjfx.DsjfxActivity"></activity>
+        <activity android:name=".activity.main.Main2Activity" /> <!-- 其他的配置项 -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.lsproject.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider> <!-- 其他的配置项 -->
         <activity android:name=".activity.ycpx.wdpx.WdpxDetailActivity" />
         <activity android:name=".activity.ycpx.wdpx.WdpxActivity" />
         <activity android:name=".activity.ycpx.pxjh.PxjhDetailActivity" />

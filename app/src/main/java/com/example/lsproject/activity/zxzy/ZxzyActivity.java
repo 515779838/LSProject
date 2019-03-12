@@ -39,18 +39,18 @@ public class ZxzyActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = null;
-                switch (homeModels.get(position).getResourceId()) {
+                switch (homeModels.get(position).getId()) {
                     case "1"://本地资源
                         intent = new Intent(ZxzyActivity.this, BdzyActivity.class);
-                        intent.putExtra("title", homeModels.get(position).getResourceName());
+                        intent.putExtra("title", homeModels.get(position).getName());
                         break;
                     case "2"://优课资源
                         intent = new Intent(ZxzyActivity.this, YkzyActivity.class);
-                        intent.putExtra("title",homeModels.get(position).getResourceName());
+                        intent.putExtra("title",homeModels.get(position).getName());
                         break;
                     case "3"://全市资源
                         intent = new Intent(ZxzyActivity.this, QszyActivity.class);
-                        intent.putExtra("title",homeModels.get(position).getResourceName());
+                        intent.putExtra("title",homeModels.get(position).getName());
                         break;
 
                     default:

@@ -29,12 +29,9 @@ open class BaseActivity : BaseActivity2() {
     var pageIndex = 1
     var pageSize = 5
 
-    var imgPrePath = ""
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         MyApp.getActivies().add(this)
-        imgPrePath = SPTools[this, Constant.ACCESSURLPREFIX, ""].toString()
     }
 
     override fun onDestroy() {
@@ -190,13 +187,6 @@ open class BaseActivity : BaseActivity2() {
         } catch (e: Exception) {
 
         }
-    }
-
-    /**
-     * 判断用户身份是不是教育局用户
-     */
-    open fun getUserTypeIsBureau(): Boolean {
-        return SPTools[this, Constant.USERTYPE, ""] == Constant.TYPE_BUREAU
     }
 
     /**

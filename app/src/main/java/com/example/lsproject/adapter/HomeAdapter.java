@@ -59,12 +59,12 @@ public class HomeAdapter extends BaseAdapter {
         }
         if (homeModels != null && homeModels.get(position) != null && homeModels.get(position).getIcon() != null) {
             if (homeModels.get(position).getIcon().startsWith("http")) {
-                Glide.with(context).load(((BaseActivity) context).getImgPrePath() + homeModels.get(position).getIcon()).into(holder.imageView);
+                Glide.with(context).load( homeModels.get(position).getIcon()).into(holder.imageView);
             } else {
                 Glide.with(context).load(Integer.valueOf(homeModels.get(position).getIcon())).into(holder.imageView);
             }
         }
-        String name = homeModels.get(position).getResourceName();
+        String name = homeModels.get(position).getName();
         if (name.length() < 6) {
 
         } else if (name.length() == 6) {

@@ -11,13 +11,13 @@ import com.example.lsproject.url.Urls
 import com.google.gson.Gson
 import com.hhkj.highschool.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_login.*
+import org.jetbrains.anko.toast
 
 class LoginActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
         if (SPTools[this, Constant.TOKEN, ""].toString() != "") {
             // 重新登录
 //            et_username.setText(SPTools[this, Constant.ZHANGHAO, ""].toString())
@@ -28,17 +28,11 @@ class LoginActivity : BaseActivity() {
             finish()
         }
         initView()
-
-
     }
 
     private fun initView() {
-        // window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE or WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
-
         setTextTitle("登录")
-
         btn_login.setOnClickListener {
-
 //            if (et_username.text.isEmpty()) {
 //                toast("用户名不能为空")
 //                return@setOnClickListener
@@ -48,40 +42,41 @@ class LoginActivity : BaseActivity() {
 //                return@setOnClickListener
 //            }
 //            net_login()
-
             startActivity(Intent(this@LoginActivity, MainActivity::class.java))
-
         }
     }
 
     private fun net_login() {
         val map = HashMap<String, String>()
-        map["userName"] = et_username.text.toString().trim()
+        map["username"] = et_username.text.toString().trim()
         map["password"] = et_password.text.toString()
         NetTools.net(map, Urls().loginApp, this) { response ->
-            var loginBean = Gson().fromJson(response.data, LoginBean::class.java)
-            getData(loginBean)
+            if (response.code == "0") {
+                var loginBean = Gson().fromJson(response.data, LoginBean::class.java)
+                getData(loginBean)
+            }
+            toast("" + response.msg)
         }
     }
 
     private fun getData(loginBean: LoginBean) {
-        if (loginBean != null) {
-
-//            // 账号密码
-//            SPTools.put(this, Constant.ZHANGHAO, et_username.text.toString().trim())
-//            SPTools.put(this, Constant.MIMA, et_password.text.toString())
-//
-//            SPTools.put(this, Constant.TOKEN, "" + loginBean!!.token)
-//            SPTools.put(this, Constant.USERNAME, "" + loginBean!!.userName)
-//            SPTools.put(this, Constant.USERTYPE, "" + loginBean!!.userType)
-//
-//            SPTools.put(this, Constant.BUREAUNAME, "" + loginBean!!.bureauName)
-//            SPTools.put(this, Constant.BUREAUID, "" + loginBean!!.bureauId)
-//
-//            SPTools.put(this, Constant.DISTRICTID, "" + loginBean!!.districtId)
-//            SPTools.put(this, Constant.DISTRICTNAME, "" + loginBean!!.districtName)
+        SPTools.put(this, Constant.USERNAME, et_username.text.toString().trim())
+        SPTools.put(this, Constant.PASSWORD, et_password.text.toString().trim())
+        SPTools.put(this, Constant.TOKEN, loginBean.token)
+        SPTools.put(this, Constant.YHXLH, loginBean.yhxlh)
+        SPTools.put(this, Constant.YHTX, loginBean.yhtx)
+        SPTools.put(this, Constant.YHMC, loginBean.yhmc)
+        SPTools.put(this, Constant.USERTYPE, loginBean.usertype)
+        SPTools.put(this, Constant.USERTYPENAME, loginBean.usertypeName)
+        SPTools.put(this, Constant.SJHM, loginBean.sjhm)
+        SPTools.put(this, Constant.EMAIL, loginBean.email)
+        if (loginBean.usertype == "") {
+            // 管理员
+            startActivity(Intent(this@LoginActivity, Main2Activity::class.java))
+        } else {
+            // 教师/学生（家长）
             startActivity(Intent(this@LoginActivity, MainActivity::class.java))
-            finish()
         }
+        finish()
     }
 }

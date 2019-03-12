@@ -9,30 +9,34 @@ import java.util.List;
 
 public class HomeBean implements Serializable {
 
-    private String resourceId;// 资源Key
-    private String resourceName;// 资源名称
+    private String id;// 资源Key
+    private String name;// 资源名称
     private String icon;
 
-    public HomeBean(String resourceId, String resourceName, String icon) {
-        this.resourceId = resourceId;
-        this.resourceName = resourceName;
+    public HomeBean() {
+        super();
+    }
+
+    public HomeBean(String id, String name, String icon) {
+        this.id = id;
+        this.name = name;
         this.icon = icon;
     }
 
-    public String getResourceId() {
-        return resourceId;
+    public String getId() {
+        return id;
     }
 
-    public void setResourceId(String resourceId) {
-        this.resourceId = resourceId;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getResourceName() {
-        return resourceName;
+    public String getName() {
+        return name;
     }
 
-    public void setResourceName(String resourceName) {
-        this.resourceName = resourceName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getIcon() {
@@ -46,8 +50,8 @@ public class HomeBean implements Serializable {
     @Override
     public String toString() {
         return "HomeBean{" +
-                "resourceId='" + resourceId + '\'' +
-                ", resourceName='" + resourceName + '\'' +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
                 ", icon='" + icon + '\'' +
                 '}';
     }

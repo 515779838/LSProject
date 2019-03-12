@@ -46,30 +46,30 @@ public class YcpxActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = null;
-                switch (homeModels.get(position).getResourceId()) {
+                switch (homeModels.get(position).getId()) {
                     case "1"://培训计划
                         intent = new Intent(YcpxActivity.this, PxjhActivity.class);
-                        intent.putExtra("title", homeModels.get(position).getResourceName());
+                        intent.putExtra("title", homeModels.get(position).getName());
                         break;
                     case "2"://我的培训
                         intent = new Intent(YcpxActivity.this, WdpxActivity.class);
-                        intent.putExtra("title",homeModels.get(position).getResourceName());
+                        intent.putExtra("title",homeModels.get(position).getName());
                         break;
                     case "3"://培训申请
                         intent = new Intent(YcpxActivity.this, PxsqActivity.class);
-                        intent.putExtra("title",homeModels.get(position).getResourceName());
+                        intent.putExtra("title",homeModels.get(position).getName());
                         break;
                     case "4"://调查问卷
                         intent = new Intent(YcpxActivity.this, DcwjActivity.class);
-                        intent.putExtra("title",homeModels.get(position).getResourceName());
+                        intent.putExtra("title",homeModels.get(position).getName());
                         break;
                     case "5"://学习档案
                         intent = new Intent(YcpxActivity.this, XxdaActivity.class);
-                        intent.putExtra("title",homeModels.get(position).getResourceName());
+                        intent.putExtra("title",homeModels.get(position).getName());
                         break;
                     case "6"://线下培训查询
                         intent = new Intent(YcpxActivity.this, XxpxcxActivity.class);
-                        intent.putExtra("title",homeModels.get(position).getResourceName());
+                        intent.putExtra("title",homeModels.get(position).getName());
                         break;
                     default:
                         Toast.makeText(YcpxActivity.this, "功能暂未开放，敬请期待", Toast.LENGTH_SHORT).show();

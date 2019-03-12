@@ -190,14 +190,7 @@ public class NetTools {
             }
             builder.addFile("file" + i, map.get("file" + i).getName(), map.get("file" + i));
         }
-
-        builder.addParams("work", SPTools.INSTANCE.get(context, Constant.PROJECTNAME, "iems").toString());
         builder.addParams("transaction", "1");
-        if (((BaseActivity) context).getUserTypeIsBureau()) {
-            builder.addParams("org", (String) SPTools.INSTANCE.get(context, Constant.BUREAUID, ""));
-        } else {
-            builder.addParams("org", (String) SPTools.INSTANCE.get(context, Constant.DISTRICTID, ""));
-        }
         if (isImgs) {
             builder.addParams("thumbnail", "1");
         } else {
